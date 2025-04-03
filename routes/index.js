@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
   );
 });
 // Lấy tất cả sản phẩm trong một danh mục theo slug
-router.get('/slug/:category', async function(req, res) {
+router.get('/:category', async function(req, res) {
   try {
     // Tìm danh mục theo slug
     let category = await categoryModel.findOne({ slug: req.params.category });
@@ -30,7 +30,7 @@ router.get('/slug/:category', async function(req, res) {
 });
 
 // Lấy sản phẩm theo slug category và slug sản phẩm
-router.get('/slug/:category/:product', async function(req, res) {
+router.get('/:category/:product', async function(req, res) {
   try {
     // Tìm danh mục theo slug
     let category = await categoryModel.findOne({ slug: req.params.category });
